@@ -1,3 +1,7 @@
+.showMenuMobile {
+    position: absolute;
+    width: 100%;
+}
 
 .cabecalho {
     display: flex;

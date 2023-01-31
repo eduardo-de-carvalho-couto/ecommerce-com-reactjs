@@ -1,9 +1,9 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import styles from './MenuMobile.module.css'
 import { MenuMobileItem } from './MenuMobileItem';
 
-export default function MenuMobile({ showMenuMobile }) {
-
+export default function MenuMobile({ toggleMenuMobile, showMenuMobile }) {
 
   return (
 
@@ -25,8 +25,8 @@ export default function MenuMobile({ showMenuMobile }) {
         <MenuMobileItem />
         <MenuMobileItem />
         <div className={styles.ultimaOpcaoContainer}>
-          <div className={styles.ultimaOpcao}>
-            <a href="#">Última opção</a>
+          <div onClick={toggleMenuMobile} className={styles.ultimaOpcao}>
+            <Link to="/ultima-opcao">Última opção</Link>
           </div>
         </div>
       </div>

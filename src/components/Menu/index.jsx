@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom';
 import MenuMobile from '../MenuMobile'
 import styles from './Menu.module.css'
 
@@ -20,7 +21,9 @@ export default function Menu() {
                 menu
             </span>
             
-            <img src="/img/logo.png" alt="Logo da loja de eletrônicos" className={styles.logo__cabecalho}/>
+            <Link onClick={ menuMobile ? toggleMenuMobile : '' } to="/">
+              <img src="/img/logo.png" alt="Logo da loja de eletrônicos" className={styles.logo__cabecalho}/>
+            </Link>
 
             </div>
             <div className={styles.container}>
@@ -30,8 +33,8 @@ export default function Menu() {
           </div>
         </div>
 
-        <div style={{display: showMenuMobile}}>
-          <MenuMobile showMenuMobile={menuMobile} />
+        <div className={styles.showMenuMobile} style={{display: showMenuMobile}}>
+          <MenuMobile toggleMenuMobile={toggleMenuMobile} showMenuMobile={menuMobile} />
         </div>
     </header>
   )
