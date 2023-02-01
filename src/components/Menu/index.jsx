@@ -16,24 +16,24 @@ export default function Menu() {
   return (
     <header>
       <div className={styles.cabecalho}>
-          <div className={styles.container}>
-            <span onClick={toggleMenuMobile} className={`material-symbols-outlined ${styles.menu}`}>
-                menu
-            </span>
-            
-            <Link onClick={ menuMobile ? toggleMenuMobile : '' } to="/">
-              <img src="/img/logo.png" alt="Logo da loja de eletrônicos" className={styles.logo__cabecalho}/>
-            </Link>
+        <div className={styles.container}>
+          <span onClick={toggleMenuMobile} className={`material-symbols-outlined ${styles.menu}`}>
+              menu
+          </span>
+          
+          <Link onClick={ menuMobile ? toggleMenuMobile : '' } to="/">
+            <img src="/img/logo.png" alt="Logo da loja de eletrônicos" className={styles.logo__cabecalho}/>
+          </Link>
 
-            </div>
-            <div className={styles.container}>
-            <span className={`material-symbols-outlined ${styles.carrinho__cabecalho}`}>
-                shopping_cart
-            </span>          
           </div>
+          <div className={styles.container}>
+          <span className={`material-symbols-outlined ${styles.carrinho__cabecalho}`}>
+              shopping_cart
+          </span>          
         </div>
+      </div>
 
-        <div className={styles.showMenuMobile} style={{display: showMenuMobile}}>
+        <div className={menuMobile ? styles.showMenuMobile : styles.hideMenuMobile} style={{display: showMenuMobile}}>
           <MenuMobile toggleMenuMobile={toggleMenuMobile} showMenuMobile={menuMobile} />
         </div>
     </header>

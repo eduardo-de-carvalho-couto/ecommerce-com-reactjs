@@ -7,13 +7,6 @@
     justify-content: space-between;
 }
 
-.opcaoEspecialAtivada{
-    animation: fadeInLeft 0.3s both;
-}
-
-.opcaoEspecialDesativada {
-    animation: fadeInRight 0.3s both;
-}
 
 @keyframes fadeInLeft {
     0%{
@@ -32,6 +25,15 @@
         transform: translateX(0);
     }
 }
+
+.opcaoEspecialAtivada{
+    animation: fadeInLeft 0.3s both;
+}
+
+.opcaoEspecialDesativada {
+    animation: fadeInRight 0.3s both;
+}
+
 
 
 .opcaoEspecialItem {
@@ -42,31 +44,15 @@
     color: var(--cor-branco);
 }
 
-.menuMobile{
+.menuMobileTransition{
     animation: fadeInLeft 0.3s both;
 }
 
-@keyframes fadeInLeft {
-    0%{
-        transform: translateX(-100%);
-    }
-    100%{
-        transform: translateX(0);
-    }
-}
 
 .menuMobileDisabled {
     animation: fadeInRight 0.3s both;
 }
 
-@keyframes fadeInRight {
-    100%{
-        transform: translateX(-100%);
-    }
-    0%{
-        transform: translateX(0);
-    }
-}
 
 .menuMobileItemContainer {
     background-color: var(--cor-cinza-clara);

@@ -1,7 +1,23 @@
 .showMenuMobile {
     position: absolute;
     width: 100%;
+    z-index: 2;
 }
+
+.hideMenuMobile {
+    position: absolute;
+    width: 100%;
+    animation: move 2s both;
+}
+
+@keyframes move {
+    from {
+      z-index: 2;
+    }
+    to {
+      z-index: 1;
+    }
+  }
 
 .cabecalho {
     display: flex;

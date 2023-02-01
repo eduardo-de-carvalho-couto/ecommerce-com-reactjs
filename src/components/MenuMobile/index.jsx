@@ -15,7 +15,7 @@ export default function MenuMobile({ toggleMenuMobile, showMenuMobile }) {
         </div>
       </div>
 
-      <div className={showMenuMobile ? styles.menuMobile : styles.menuMobileDisabled}>
+      <div className={showMenuMobile ? styles.menuMobileTransition : styles.menuMobileDisabled}>
         <MenuMobileItem />
         <MenuMobileItem />
         <MenuMobileItem />
