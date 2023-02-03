@@ -17,13 +17,6 @@ export default function MenuMobile({ toggleMenuMobile, showMenuMobile }) {
 
       <div className={showMenuMobile ? styles.menuMobileTransition : styles.menuMobileDisabled}>
         <MenuMobileItem />
-        <MenuMobileItem />
-        <MenuMobileItem />
-        <MenuMobileItem />
-        <MenuMobileItem />
-        <MenuMobileItem />
-        <MenuMobileItem />
-        <MenuMobileItem />
         <div className={styles.ultimaOpcaoContainer}>
           <div onClick={toggleMenuMobile} className={styles.ultimaOpcao}>
             <Link to="/ultima-opcao">Última opção</Link>

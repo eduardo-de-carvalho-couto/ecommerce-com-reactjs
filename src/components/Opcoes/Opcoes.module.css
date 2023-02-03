@@ -1,0 +1,19 @@
+.opcoes {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    padding: 48px 0;
+}
+
+.opcao {
+    text-align: center;
+    color: var(--cor-cinza);
+    list-style: none;
+}
+
+.imagem {
+    height: 120px;
+    width: 120px;
+    border-radius: 100%;
+}

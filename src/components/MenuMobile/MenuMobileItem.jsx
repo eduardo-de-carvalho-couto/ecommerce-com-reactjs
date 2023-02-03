@@ -1,12 +1,16 @@
-import React from 'react'
-import styles from './MenuMobile.module.css'
+import React from 'react';
+import styles from './MenuMobile.module.css';
+
+import opcoes from '../../json/opcoes.json';
 
 export const MenuMobileItem = () => {
     return (
-        <div className={styles.MenuMobileItemContainer}>
-            <div className={styles.MenuMobileItem}>
-                <a href='#'>Opção Opção </a>
-            </div>
-        </div>
+        <ul className={styles.MenuMobileItemContainer}>
+            {opcoes.map((opcao) => (
+                <li className={styles.MenuMobileItem} key={opcao.id}>
+                    <a href='#'> {opcao.titulo} </a>
+                </li>
+            ))}
+        </ul>
     );
 }
