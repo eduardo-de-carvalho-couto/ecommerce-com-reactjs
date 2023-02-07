@@ -16,6 +16,7 @@
   --cor-branco: #ffffff;
   --fonte-principal: 'Raleway', sans-serif;
   --fonte-secundaria: 'Playfair Display', sans-serif;
+  --fonte-tech: 'Press Start 2P', cursive;
  
   font-family: var(--fonte-principal);
 }
