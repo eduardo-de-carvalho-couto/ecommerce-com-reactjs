@@ -1,0 +1,35 @@
+
+.produtos {
+    display: flex;
+    justify-content: center;
+    color: var(--cor-cinza);
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.produto {
+    background-color: var(--cor-cinza-clara);
+    list-style: none;
+    padding: 12px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);
+}
+
+.produto h3 {
+    margin: 8px auto;
+    width: 128px;
+    text-align: center;
+}
+
+.produtoImagem {
+    width: 136px;
+    height: 192px;
+    margin: 0 0 4px 0;
+}
+
+.preco {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 700;
+    margin: 4px 0;
+}

@@ -1,4 +1,4 @@
-.opcoes {
+.tags {
     display: flex;
     justify-content: center;
     gap: 24px;
@@ -6,7 +6,7 @@
     padding: 48px 0;
 }
 
-.opcao {
+.tag {
     text-align: center;
     color: var(--cor-cinza);
     list-style: none;

@@ -1,0 +1,72 @@
+[
+    {
+        "id": 1,
+        "titulo": "Laptops",
+        "imagem": "./img/computador.png",
+        "preco": "R$ 3200,00",
+        "precoPromocional": "R$ 3000,00",
+        "tag": "Laptops",
+        "promocao": true,
+        "novidade": true
+    },
+    {
+        "id": 2,
+        "titulo": "Setups",
+        "imagem": "./img/setup.jpg",
+        "preco": "R$ 5000,00",
+        "precoPromocional": "R$ 4700,00",
+        "tag": "Setups",
+        "promocao": true,
+        "novidade": true
+    },
+    {
+        "id": 3,
+        "titulo": "Placa de Video",
+        "imagem": "./img/processadores.jpg",
+        "preco": "R$ 3270,00",
+        "precoPromocional": "R$ 3000,00",
+        "tag": "Placa de Video",
+        "promocao": true,
+        "novidade": false
+    },
+    {
+        "id": 4,
+        "titulo": "Keyboards",
+        "imagem": "./img/keyboards.jpg",
+        "preco": "R$ 270,00",
+        "precoPromocional": null,
+        "tag": "Keyboards",
+        "promocao": false,
+        "novidade": true
+    },
+    {
+        "id": 5,
+        "titulo": "Mouses",
+        "imagem": "./img/mouses.jpg",
+        "preco": "R$ 120,00",
+        "precoPromocional": null,
+        "tag": "Mouses",
+        "promocao": false,
+        "novidade": true
+    },
+    {
+        "id": 6,
+        "titulo": "Headset",
+        "imagem": "./img/headset.jpg",
+        "preco": "R$ 220,00",
+        "precoPromocional": "R$ 180,00",
+        "tag": "Headset",
+        "promocao": true,
+        "novidade": false
+    },
+    {
+        "id": 7,
+        "titulo": "Keyboard High Tech",
+        "imagem": "img/keyboard-1.jpg",
+        "preco": "R$ 270,00",
+        "precoPromocional": "R$ 199,99",
+        "tag": "Keyboards",
+        "promocao": true,
+        "novidade": false
+    }
+]

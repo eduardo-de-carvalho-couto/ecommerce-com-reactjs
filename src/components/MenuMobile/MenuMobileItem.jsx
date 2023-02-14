@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './MenuMobile.module.css';
 
-import opcoes from '../../json/opcoes.json';
+import opcoes from '../../json/produtos.json';
 
 export const MenuMobileItem = () => {
     return (

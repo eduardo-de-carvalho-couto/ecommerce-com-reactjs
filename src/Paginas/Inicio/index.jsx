@@ -1,46 +1,49 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Banner from 'components/Banner'
 import Opcoes from 'components/Opcoes'
+import Produtos from 'components/Produtos'
 
+import produtos from 'json/produtos.json';
 import styles from './Inicio.module.css'
 
+
 export default function Inicio() {
+
+  const [itens, setItens] = useState(produtos)
+  const [itensNovidades, setItensNovidades] = useState(itens)
+  const [itensPromocoes, setItensPromocoes] = useState(itens)
+
+  function filtrarProdutos(tag) {
+    const novosProdutos = produtos.filter((produto) => (produto.tag === tag));
+    setItens(novosProdutos)
+  }
+
+  function filtrarNovidades() {
+    const produtosNovidades = itens.filter((item) => (item.novidade))
+    setItensNovidades(produtosNovidades)
+  }
+
+  function filtrarPromocoes() {
+    const produtosPromocoes = itens.filter((item) => (item.promocao))
+    setItensPromocoes(produtosPromocoes)
+  }
+
+  useEffect(() => {
+    filtrarNovidades()
+    filtrarPromocoes()
+  }, [itens])
+
   return (
     <>
       <Banner />
-      <Opcoes />
+      <Opcoes opcoes={produtos} filtrarProdutos={filtrarProdutos} setItens={setItens} />
       <section>
-        <h2 className={styles.tech}> Promoções </h2>
-        <ul className={styles.produtos}>
-          <li className={styles.produto}>
-            <img src="img/keyboard-1.jpg" className={styles.produtoImagem} alt="" />
-
-            <h3>Keyboard High Tech</h3>
-            <p className={styles.preco}><s>R$ 250,00</s></p>
-            <p className={styles.preco}><u>R$ 200,00</u></p>
-          </li>
-          <li className={styles.produto}>
-            <img src="img/keyboard-1.jpg" className={styles.produtoImagem} alt="" />
-
-            <h3>Keyboard High Tech</h3>
-            <p className={styles.preco}><s>R$ 250,00</s></p>
-            <p className={styles.preco}><u>R$ 200,00</u></p>
-          </li>
-          <li className={styles.produto}>
-            <img src="img/keyboard-1.jpg" className={styles.produtoImagem} alt="" />
-
-            <h3>Keyboard High Tech</h3>
-            <p className={styles.preco}><s>R$ 250,00</s></p>
-            <p className={styles.preco}><u>R$ 200,00</u></p>
-          </li>
-          <li className={styles.produto}>
-            <img src="img/keyboard-1.jpg" className={styles.produtoImagem} alt="" />
-
-            <h3>Keyboard High Tech</h3>
-            <p className={styles.preco}><s>R$ 250,00</s></p>
-            <p className={styles.preco}><u>R$ 200,00</u></p>
-          </li>
-        </ul>
+        <h2 className={styles.tituloSection}> Novidades </h2>
+        <Produtos itens={itensNovidades} />
+      </section>
+      <section>
+        <h2 className={styles.tituloSection}> Promoções </h2>
+        <Produtos itens={itensPromocoes} />
       </section>
     </>
   )
