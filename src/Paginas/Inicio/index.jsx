@@ -12,6 +12,7 @@ export default function Inicio() {
   const [itens, setItens] = useState(produtos)
   const [itensNovidades, setItensNovidades] = useState(itens)
   const [itensPromocoes, setItensPromocoes] = useState(itens)
+  const [itensMaisPedidos, setItensMaisPedidos] = useState(itens)
 
   function filtrarProdutos(tag) {
     const novosProdutos = produtos.filter((produto) => (produto.tag === tag));
@@ -28,9 +29,15 @@ export default function Inicio() {
     setItensPromocoes(produtosPromocoes)
   }
 
+  function filtrarMaisPedidos() {
+    const produtosMaisPedidos = itens.filter((item) => (item.maisPedidos))
+    setItensMaisPedidos(produtosMaisPedidos)
+  }
+
   useEffect(() => {
     filtrarNovidades()
     filtrarPromocoes()
+    filtrarMaisPedidos()
   }, [itens])
 
   return (
@@ -44,6 +51,10 @@ export default function Inicio() {
       <section>
         <h2 className={styles.tituloSection}> Promoções </h2>
         <Produtos itens={itensPromocoes} />
+      </section>
+      <section>
+        <h2 className={styles.tituloSection}> Mais Pedidos </h2>
+        <Produtos itens={itensMaisPedidos} />
       </section>
     </>
   )

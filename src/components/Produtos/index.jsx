@@ -10,10 +10,13 @@ export default function Produtos({ itens }) {
                 <img src={item.imagem} className={styles.produtoImagem} alt={item.titulo} />
 
                 <h3>{item.titulo}</h3>
+                <div className={styles.preco}>
+                  {item.maisPedidos ? <img src="./img/stars.png" className={styles.imagemCincoEstrelas} alt="" /> : ''}
+                </div>
                 {item.promocao 
                     ? <><p className={styles.preco}><s>{item.preco}</s></p> <p className={styles.preco}><u>{item.precoPromocional}</u></p></> 
                     : <p className={styles.preco}><u>{item.preco}</u></p>
-                }    
+                }
             </li>
         ))}
     </ul>

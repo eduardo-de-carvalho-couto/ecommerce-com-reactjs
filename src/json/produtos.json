@@ -7,7 +7,8 @@
         "precoPromocional": "R$ 3000,00",
         "tag": "Laptops",
         "promocao": true,
-        "novidade": true
+        "novidade": true,
+        "maisPedidos": true
     },
     {
         "id": 2,
@@ -17,7 +18,8 @@
         "precoPromocional": "R$ 4700,00",
         "tag": "Setups",
         "promocao": true,
-        "novidade": true
+        "novidade": true,
+        "maisPedidos": true
     },
     {
         "id": 3,
@@ -27,7 +29,8 @@
         "precoPromocional": "R$ 3000,00",
         "tag": "Placa de Video",
         "promocao": true,
-        "novidade": false
+        "novidade": false,
+        "maisPedidos": true
     },
     {
         "id": 4,
@@ -37,7 +40,8 @@
         "precoPromocional": null,
         "tag": "Keyboards",
         "promocao": false,
-        "novidade": true
+        "novidade": true,
+        "maisPedidos": false
     },
     {
         "id": 5,
@@ -47,7 +51,8 @@
         "precoPromocional": null,
         "tag": "Mouses",
         "promocao": false,
-        "novidade": true
+        "novidade": true,
+        "maisPedidos": false
     },
     {
         "id": 6,
@@ -57,7 +62,8 @@
         "precoPromocional": "R$ 180,00",
         "tag": "Headset",
         "promocao": true,
-        "novidade": false
+        "novidade": false,
+        "maisPedidos": false
     },
     {
         "id": 7,
@@ -67,6 +73,7 @@
         "precoPromocional": "R$ 199,99",
         "tag": "Keyboards",
         "promocao": true,
-        "novidade": false
+        "novidade": false,
+        "maisPedidos": true
     }
 ]

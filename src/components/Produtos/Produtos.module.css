@@ -21,6 +21,11 @@
     text-align: center;
 }
 
+.imagemCincoEstrelas {
+    width: 100px;
+    height: 30px;
+}
+
 .produtoImagem {
     width: 136px;
     height: 192px;
