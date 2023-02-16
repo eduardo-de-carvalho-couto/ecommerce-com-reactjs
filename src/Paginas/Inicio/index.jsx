@@ -4,7 +4,7 @@ import Opcoes from 'components/Opcoes'
 import Produtos from 'components/Produtos'
 
 import produtos from 'json/produtos.json';
-import styles from './Inicio.module.css'
+import Explicacoes from 'components/Explicacoes';
 
 
 export default function Inicio() {
@@ -44,18 +44,17 @@ export default function Inicio() {
     <>
       <Banner />
       <Opcoes opcoes={produtos} filtrarProdutos={filtrarProdutos} setItens={setItens} />
-      <section>
-        <h2 className={styles.tituloSection}> Novidades </h2>
-        <Produtos itens={itensNovidades} />
-      </section>
-      <section>
-        <h2 className={styles.tituloSection}> Promoções </h2>
-        <Produtos itens={itensPromocoes} />
-      </section>
-      <section>
-        <h2 className={styles.tituloSection}> Mais Pedidos </h2>
-        <Produtos itens={itensMaisPedidos} />
-      </section>
+      
+      <Produtos itens={itensNovidades} >
+        Novidades
+      </Produtos>
+      <Produtos itens={itensPromocoes} >
+        Promoções
+      </Produtos>
+      <Produtos itens={itensMaisPedidos} >
+        Mais Pedidos
+      </Produtos>
+      <Explicacoes />
     </>
   )
 }

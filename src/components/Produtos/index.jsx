@@ -1,11 +1,14 @@
 import React from 'react';
 import styles from './Produtos.module.css'
 
-export default function Produtos({ itens }) {
+export default function Produtos({ children, itens }) {
 
   return (
-    <ul className={styles.produtos}>
-        {itens.map(item => (
+
+    <section style={itens.length ? {display: "block"} : {display: "none"} }>
+        <h2 className={styles.tituloSection}> {children} </h2>
+        <ul className={styles.produtos}>
+          {itens.map(item => (
             <li className={styles.produto} key={item.id}>
                 <img src={item.imagem} className={styles.produtoImagem} alt={item.titulo} />
 
@@ -18,8 +21,9 @@ export default function Produtos({ itens }) {
                     : <p className={styles.preco}><u>{item.preco}</u></p>
                 }
             </li>
-        ))}
-    </ul>
+          ))}
+        </ul>
+      </section>
   )
 }
 

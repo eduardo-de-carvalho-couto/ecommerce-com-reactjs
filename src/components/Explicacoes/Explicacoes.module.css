@@ -1,0 +1,33 @@
+.explicacaoContainer {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 24px;
+    color: var(--cor-cinza);
+    padding: 80px 0;
+}
+
+.explicacao {
+    
+    list-style: none;
+    padding: 12px;
+    border-radius: 8px;
+    text-align: center;
+    border: solid 2px var(--cor-cinza);
+    min-width: 300px;
+}
+
+.icon {
+    font-size: 80px;
+    text-align: center;
+}
+
+.explicacao h2 {
+    margin: 8px auto;
+    max-width: 200px;
+}
+
+.explicacao p {
+    max-width: 200px;
+    margin: 0 auto;
+}

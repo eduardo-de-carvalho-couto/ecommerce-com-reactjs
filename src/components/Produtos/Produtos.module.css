@@ -1,4 +1,11 @@
 
+.tituloSection {
+    font-family: var(--fonte-tech);
+    text-align: center;
+    color: var(--cor-azul-principal);
+    padding: 40px 0;
+}
+
 .produtos {
     display: flex;
     justify-content: center;
