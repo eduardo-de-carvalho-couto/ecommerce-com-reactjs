@@ -2,6 +2,8 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import styles from './MenuMobile.module.css'
 import { MenuMobileItem } from './MenuMobileItem';
+import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
+import Inventory2OutlinedIcon from '@mui/icons-material/Inventory2Outlined';
 
 export default function MenuMobile({ toggleMenuMobile, showMenuMobile }) {
 
@@ -10,8 +12,8 @@ export default function MenuMobile({ toggleMenuMobile, showMenuMobile }) {
     <>
       <div className={showMenuMobile ? styles.opcaoEspecialAtivada : styles.opcaoEspecialDesativada}>
         <div className={styles.opcaoEspecial}>
-          <a href="#" className={styles.opcaoEspecialItem}><span className="material-symbols-outlined"> home </span> Home </a>
-          <a href="#" className={styles.opcaoEspecialItem}><span className="material-symbols-outlined"> inventory_2</span> Meus Pedidos</a>
+          <a href="#" className={styles.opcaoEspecialItem}><HomeOutlinedIcon /> Home </a>
+          <a href="#" className={styles.opcaoEspecialItem}><Inventory2OutlinedIcon /> Meus Pedidos</a>
         </div>
       </div>
 

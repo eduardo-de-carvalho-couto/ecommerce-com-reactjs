@@ -1,7 +1,10 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import MenuMobile from '../MenuMobile'
-import styles from './Menu.module.css'
+import MenuMobile from '../MenuMobile';
+import styles from './Menu.module.css';
+import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
+import { Badge } from '@mui/material';
+import MenuIcon from '@mui/icons-material/Menu';
 
 export default function Menu() {
 
@@ -17,9 +20,8 @@ export default function Menu() {
     <header>
       <div className={styles.cabecalho}>
         <div className={styles.container}>
-          <span onClick={toggleMenuMobile} className={`material-symbols-outlined ${styles.menu}`}>
-              menu
-          </span>
+          
+          <MenuIcon onClick={toggleMenuMobile} fontSize="40px" className={styles.menu}/>
           
           <Link onClick={ menuMobile ? toggleMenuMobile : '' } to="/">
             <img src="/img/logo.png" alt="Logo da loja de eletrônicos" className={styles.logo__cabecalho}/>
@@ -27,9 +29,9 @@ export default function Menu() {
 
           </div>
           <div className={styles.container}>
-          <span className={`material-symbols-outlined ${styles.carrinho__cabecalho}`}>
-              shopping_cart
-          </span>          
+          <Badge badgeContent={2} color="primary">
+            <ShoppingCartOutlinedIcon style={{ color: "#ffffff" }} fontSize="large" />
+          </Badge>
         </div>
       </div>
 
