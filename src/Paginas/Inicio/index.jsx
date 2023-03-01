@@ -5,6 +5,7 @@ import Produtos from 'components/Produtos'
 
 import produtos from 'json/produtos.json';
 import Explicacoes from 'components/Explicacoes';
+import Carrinho from 'components/Carrinho';
 
 
 export default function Inicio() {
@@ -13,6 +14,8 @@ export default function Inicio() {
   const [itensNovidades, setItensNovidades] = useState(itens)
   const [itensPromocoes, setItensPromocoes] = useState(itens)
   const [itensMaisPedidos, setItensMaisPedidos] = useState(itens)
+  
+  const [item, setItem] = useState('')
 
   function filtrarProdutos(tag) {
     const novosProdutos = produtos.filter((produto) => (produto.tag === tag));
@@ -45,16 +48,19 @@ export default function Inicio() {
       <Banner />
       <Opcoes opcoes={produtos} filtrarProdutos={filtrarProdutos} setItens={setItens} />
       
-      <Produtos itens={itensNovidades} >
+      <Produtos itens={itensNovidades} setItem={setItem}>
         Novidades
       </Produtos>
-      <Produtos itens={itensPromocoes} >
+      <Produtos itens={itensPromocoes} setItem={setItem}>
         Promoções
       </Produtos>
-      <Produtos itens={itensMaisPedidos} >
+      <Produtos itens={itensMaisPedidos} setItem={setItem}>
         Mais Pedidos
       </Produtos>
+
       <Explicacoes />
+
+      <Carrinho produto={item} />
     </>
   )
 }

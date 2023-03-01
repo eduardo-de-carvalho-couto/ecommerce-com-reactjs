@@ -1,15 +1,15 @@
 import React from 'react';
 import styles from './Produtos.module.css'
 
-export default function Produtos({ children, itens }) {
+export default function Produtos({ children, itens, setItem }) {
 
   return (
 
-    <section style={itens.length ? {display: "block"} : {display: "none"} }>
+      <section style={itens.length ? {display: "block"} : {display: "none"} }>
         <h2 className={styles.tituloSection}> {children} </h2>
         <ul className={styles.produtos}>
           {itens.map(item => (
-            <li className={styles.produto} key={item.id}>
+            <li className={styles.produto} key={item.id} onClick={() => setItem(item)}>
                 <img src={item.imagem} className={styles.produtoImagem} alt={item.titulo} />
 
                 <h3>{item.titulo}</h3>
