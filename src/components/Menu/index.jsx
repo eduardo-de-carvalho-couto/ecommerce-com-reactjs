@@ -5,8 +5,11 @@ import styles from './Menu.module.css';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import { Badge } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
+import { useCarrinhoContext } from 'common/context/Carrinho';
 
 export default function Menu() {
+
+  const { quantidadeProdutos } = useCarrinhoContext();
 
   const [menuMobile, setMenuMobile] = useState(false);
   const [showMenuMobile, setShowMenuMobile] = useState('none')
@@ -29,7 +32,7 @@ export default function Menu() {
 
           </div>
           <div className={styles.container}>
-          <Badge badgeContent={2} color="primary">
+          <Badge badgeContent={quantidadeProdutos} color="primary">
             <ShoppingCartOutlinedIcon style={{ color: "#ffffff" }} fontSize="large" />
           </Badge>
         </div>

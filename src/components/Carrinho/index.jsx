@@ -8,19 +8,19 @@ import { useCarrinhoContext } from 'common/context/Carrinho';
 
 export default function AdicionarProduto({ produto }) {
 
-  const { carrinho, adicionarProduto } = useCarrinhoContext()
+  const { carrinho, adicionarProduto, removerProduto } = useCarrinhoContext()
   const produtoNoCarrinho = carrinho.find(itemDoCarrinho => itemDoCarrinho.id === produto.id)
 
   return (
     <div className={styles.container}>
-      <h3>Keyboards - R$ 100,00</h3>
+      <h3>{produto.titulo} - {produto.preco}</h3>
       <IconButton color="primary" onClick={() => adicionarProduto(produto)}>
         <AddIcon />
       </IconButton>
 
       {produtoNoCarrinho?.quantidade || 0}
 
-      <IconButton color="secondary">
+      <IconButton color="secondary" onClick={() => removerProduto(produto.id)} disabled={!produtoNoCarrinho}>
         <RemoveIcon />
       </IconButton>
       
