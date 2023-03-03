@@ -60,7 +60,7 @@ export default function Inicio() {
 
       <Explicacoes />
 
-      {item ? <Carrinho produto={item} /> : ''}
+      {item ? <Carrinho produto={item} setProduto={setItem} /> : ''}
     </>
   )
 }

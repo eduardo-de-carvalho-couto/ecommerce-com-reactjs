@@ -1,3 +1,7 @@
+.container {
+    padding-top: 80px;
+}
+
 .banner {
     width: 100%;
     display: flex;

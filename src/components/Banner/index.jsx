@@ -9,25 +9,27 @@ import 'swiper/css/autoplay';
 
 export default function Banner() {
   return (
-    <Swiper
-      modules={[Navigation, Pagination, Autoplay]}
-      spaceBetween={50}
-      slidesPerView={1}
-      autoplay={{ delay: 5000 }}
-      speed={ 750 }
-      navigation
-      pagination={{ clickable: true }}
-    >
-      <SwiperSlide>
-        <div className={styles.banner}>
-          <img src="./img/e-banner-mobile.png" className={styles.imagemBanner} alt="" />
-        </div>
-      </SwiperSlide>
-      <SwiperSlide>
-        <div className={styles.banner}>
-          <img src="./img/banner.png" className={styles.imagemBanner} alt="" />
-        </div>
-      </SwiperSlide>
-    </Swiper>
+    <div className={styles.container}>
+      <Swiper
+        modules={[Navigation, Pagination, Autoplay]}
+        spaceBetween={50}
+        slidesPerView={1}
+        autoplay={{ delay: 5000 }}
+        speed={ 750 }
+        navigation
+        pagination={{ clickable: true }}
+        >
+        <SwiperSlide>
+          <div className={styles.banner}>
+            <img src="./img/e-banner-mobile.png" className={styles.imagemBanner} alt="" />
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div className={styles.banner}>
+            <img src="./img/banner.png" className={styles.imagemBanner} alt="" />
+          </div>
+        </SwiperSlide>
+      </Swiper>
+    </div>
   )
 }

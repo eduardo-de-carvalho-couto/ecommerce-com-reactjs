@@ -9,10 +9,10 @@ import { useCarrinhoContext } from 'common/context/Carrinho';
 
 export default function Menu() {
 
-  const { quantidadeProdutos } = useCarrinhoContext();
-
   const [menuMobile, setMenuMobile] = useState(false);
   const [showMenuMobile, setShowMenuMobile] = useState('none')
+
+  const { quantidadeCarrinho } = useCarrinhoContext();
 
   const toggleMenuMobile = () => {
     setMenuMobile(!menuMobile)
@@ -32,7 +32,7 @@ export default function Menu() {
 
           </div>
           <div className={styles.container}>
-          <Badge badgeContent={quantidadeProdutos} color="primary">
+          <Badge badgeContent={quantidadeCarrinho} color="primary">
             <ShoppingCartOutlinedIcon style={{ color: "#ffffff" }} fontSize="large" />
           </Badge>
         </div>

@@ -9,9 +9,9 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <Menu />
-
         <CarrinhoProvider>
+          <Menu />
+
           <Routes>
             <Route path="/" element={<Inicio />} />
             <Route path="/ultima-opcao" element={<UltimaOpcao />} />

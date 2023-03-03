@@ -5,14 +5,16 @@ import RemoveIcon from '@mui/icons-material/Remove';
 import { IconButton } from '@mui/material';
 import Button from '@mui/material/Button';
 import { useCarrinhoContext } from 'common/context/Carrinho';
+import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined';
 
-export default function AdicionarProduto({ produto }) {
+export default function AdicionarProduto({ produto, setProduto }) {
 
-  const { carrinho, adicionarProduto, removerProduto } = useCarrinhoContext()
+  const { carrinho, adicionarProduto, removerProduto, quantidadeCarrinho } = useCarrinhoContext()
   const produtoNoCarrinho = carrinho.find(itemDoCarrinho => itemDoCarrinho.id === produto.id)
 
   return (
     <div className={styles.container}>
+      <CloseOutlinedIcon className={styles.close} onClick={() => {setProduto('')}} />
       <h3>{produto.titulo} - {produto.preco}</h3>
       <IconButton color="primary" onClick={() => adicionarProduto(produto)}>
         <AddIcon />
@@ -24,7 +26,7 @@ export default function AdicionarProduto({ produto }) {
         <RemoveIcon />
       </IconButton>
       
-      <p>Há 5 itens no carrinho</p>
+      <p>Há {quantidadeCarrinho} itens no carrinho</p>
 
       <Button variant="contained" fullWidth={true} >Finalizar Compra</Button>
     </div>
