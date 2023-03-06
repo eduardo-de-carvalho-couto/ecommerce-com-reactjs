@@ -5,7 +5,8 @@ import Produtos from 'components/Produtos'
 
 import produtos from 'json/produtos.json';
 import Explicacoes from 'components/Explicacoes';
-import Carrinho from 'components/Carrinho';
+import Comprar from 'components/Comprar';
+import Menu from 'components/Menu';
 
 
 export default function Inicio() {
@@ -45,6 +46,7 @@ export default function Inicio() {
 
   return (
     <>
+      <Menu />
       <Banner />
       <Opcoes opcoes={produtos} filtrarProdutos={filtrarProdutos} setItens={setItens} />
       
@@ -60,7 +62,7 @@ export default function Inicio() {
 
       <Explicacoes />
 
-      {item ? <Carrinho produto={item} setProduto={setItem} /> : ''}
+      {item ? <Comprar produto={item} setProduto={setItem} /> : ''}
     </>
   )
 }

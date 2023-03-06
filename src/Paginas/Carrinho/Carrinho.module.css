@@ -1,0 +1,46 @@
+.container h2 {
+    text-align: center;
+    padding: 16px 0;
+    font-size: 32px;
+}
+
+.total {
+    font-size: 32px;
+    text-align: center;
+    padding: 32px 0;
+    font-weight: bold;
+}
+
+.centralizadorDoBotao {
+    text-align: center;
+}
+
+.cabecalho {
+    position: relative;
+}
+
+.voltar {
+    position: absolute;
+    top: 0;
+    margin: 16px;
+    background-color: var(--cor-cinza-clara);
+    border-radius: 50%;
+    font-size: 32px;
+}
+
+.container ul {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    list-style: none;
+}
+
+.container li {
+    background-color: var(--cor-cinza-clara);
+    margin: 0 16px;
+    display: flex;
+    align-items: center;
+    padding: 8px 16px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);
+}

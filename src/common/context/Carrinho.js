@@ -6,7 +6,6 @@ CarrinhoContext.displayName = "Carrinho";
 export const CarrinhoProvider = ({ children }) => {
     const [carrinho, setCarrinho] = useState([]);
     const [quantidadeCarrinho, setQuantidadeCarrinho] = useState(0);
-    console.log(quantidadeCarrinho)
 
     return (
         <CarrinhoContext.Provider 
