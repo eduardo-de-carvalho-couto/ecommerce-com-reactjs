@@ -7,7 +7,7 @@ import Button from '@mui/material/Button';
 import { useNavigate } from 'react-router-dom';
 
 export default function Carrinho() {
-  const { carrinho } = useCarrinhoContext();
+  const { carrinho, valorTotalCarrinho } = useCarrinhoContext();
   const navigate = useNavigate();
 
   return (
@@ -27,6 +27,8 @@ export default function Carrinho() {
       </ul>
 
       <p className={styles.total}>Total no carrinho:</p>
+      <p className={styles.total}>R$ {valorTotalCarrinho.toFixed(2)}</p>
+      
 
       <div className={styles.centralizadorDoBotao}>
         <Button color="primary" variant="contained" className={styles.comprar} >Compra</Button>

@@ -12,7 +12,7 @@ export const ComprarItem = ({ produto }) => {
 
   return (
     <>
-        <h3 className={styles.tituloEPreco}>{produto.titulo} - {produto.preco}</h3>
+        <h3 className={styles.tituloEPreco}>{produto.titulo} - {(produto.precoPromocional ? produto.precoPromocional : produto.preco).toFixed(2)}</h3>
         <div>
           <IconButton color="primary" onClick={() => adicionarProduto(produto)}>
           <AddIcon />

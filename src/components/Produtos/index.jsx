@@ -17,8 +17,8 @@ export default function Produtos({ children, itens, setItem }) {
                   {item.maisPedidos ? <img src="./img/stars.png" className={styles.imagemCincoEstrelas} alt="" /> : ''}
                 </div>
                 {item.promocao 
-                    ? <><p className={styles.preco}><s>{item.preco}</s></p> <p className={styles.preco}><u>{item.precoPromocional}</u></p></> 
-                    : <p className={styles.preco}><u>{item.preco}</u></p>
+                    ? <><p className={styles.preco}><s>R$ {item.preco}</s></p> <p className={styles.preco}><u>R$ {item.precoPromocional}</u></p></> 
+                    : <p className={styles.preco}><u>R$ {item.preco}</u></p>
                 }
             </li>
           ))}

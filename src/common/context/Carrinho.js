@@ -6,6 +6,7 @@ CarrinhoContext.displayName = "Carrinho";
 export const CarrinhoProvider = ({ children }) => {
     const [carrinho, setCarrinho] = useState([]);
     const [quantidadeCarrinho, setQuantidadeCarrinho] = useState(0);
+    const [valorTotalCarrinho, setValorTotalCarrinho] = useState(0);
 
     return (
         <CarrinhoContext.Provider 
@@ -13,7 +14,9 @@ export const CarrinhoProvider = ({ children }) => {
                 carrinho, 
                 setCarrinho, 
                 quantidadeCarrinho,
-                setQuantidadeCarrinho
+                setQuantidadeCarrinho, 
+                valorTotalCarrinho, 
+                setValorTotalCarrinho
         }}>
             {children}
         </CarrinhoContext.Provider>
@@ -25,7 +28,9 @@ export const useCarrinhoContext = () => {
         carrinho, 
         setCarrinho, 
         quantidadeCarrinho, 
-        setQuantidadeCarrinho 
+        setQuantidadeCarrinho, 
+        valorTotalCarrinho, 
+        setValorTotalCarrinho
     } = useContext(CarrinhoContext);
 
     function mudarQuantidade(id, quantidade) {
@@ -60,9 +65,16 @@ export const useCarrinhoContext = () => {
     }
 
     useEffect(() => {
-        const novaQuantidade = carrinho.reduce((contador, produto) => contador + produto.quantidade, 0);
+        const { novoTotal, novaQuantidade } = carrinho.reduce((contador, novoItem) => ({
+            novaQuantidade: contador.novaQuantidade + novoItem.quantidade,
+            novoTotal: contador.novoTotal + ((novoItem.precoPromocional ? novoItem.precoPromocional : novoItem.preco) * novoItem.quantidade)
+        }), {
+            novaQuantidade: 0,
+            novoTotal: 0
+        });
         setQuantidadeCarrinho(novaQuantidade);
-    }, [carrinho, setQuantidadeCarrinho]);
+        setValorTotalCarrinho(novoTotal);
+    }, [carrinho, setQuantidadeCarrinho, setValorTotalCarrinho]);
 
     return {
         carrinho, 
@@ -70,6 +82,7 @@ export const useCarrinhoContext = () => {
         adicionarProduto, 
         removerProduto, 
         quantidadeCarrinho, 
-        setQuantidadeCarrinho
+        setQuantidadeCarrinho, 
+        valorTotalCarrinho
     }
 }
